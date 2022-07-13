@@ -33,11 +33,20 @@ public class Electrodomestico {
 	//Constructor entero
 	public Electrodomestico(double precioBase, String color, char consumoEnergetico, double peso) {
 		this.precioBase = precioBase;
-		this.color = color;
+		if(comprobarColor(color)) this.color = color;
+		else this.color = COLOR_D;
 		this.consumoEnergetico = consumoEnergetico;
 		this.peso = peso;
 	}
 	
+	public boolean comprobarColor(String color) {
+		if(color.equals("blanco") || color.equals("negro") || color.equals("rojo") || color.equals("azul") || color.equals("gris")) {
+			return true; //Compruebo que esté el color y devuelvo true
+			}
+			else {
+				return false;
+			}
+	}
 	
 	//Getters y setters
 
